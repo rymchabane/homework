@@ -1,0 +1,16 @@
+import pandas as pd
+import os
+ 
+
+N = [x for x in os.listdir("./sales_data_2019") if not x.startswith(".")]
+the_2019_data = pd.DataFrame()
+for x in N:
+  c_data = pd.read_csv("./sales_data_2019/"+x)
+  the_2019_data = pd.concat([the_2019_data , c_data])
+
+the_2019_data.to_csv("the_2019_new_data.csv" , index = False)
+the_2019_data
+
+
+
+#i really didn't have time to do all the tasks i had interros and this week too , but i will do the rest when i have time
